@@ -79,7 +79,7 @@ export default function Home() {
   });
   const [loading, setLoading] = useState(true);
 
-  const API_BASE = 'http://127.0.0.1:8000';
+  const API_BASE = 'http://admin_dashboard.test';
 
   useEffect(() => {
     const fetchAllData = async () => {
@@ -122,10 +122,10 @@ export default function Home() {
   if (loading) return <div className="h-screen flex items-center justify-center">Loading Data...</div>;
 
   return (
-    <div className="scroll-smooth bg-white text-slate-900">
+    <div className="scroll-smooth bg-background text-foreground transition-colors duration-300">
 
       {/* HERO SECTION */}
-     <section id="home" className="min-h-[80vh] flex items-center px-6 pt-16 bg-white">
+     <section id="home" className="min-h-[80vh] flex items-center px-6 pt-16">
   <div className="container mx-auto grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
     
     {/* SISI KIRI: TEKS (Diperkecil) */}
@@ -137,7 +137,7 @@ export default function Home() {
       </div>
 
       {/* Font Size diturunkan dari text-8xl ke text-6xl agar pixel tidak terlalu besar */}
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-slate-900 mb-6">
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight mb-6">
         Siswa RPL & <br /> 
         Web Developer <br />
         <span className="text-blue-600">Membangun <br /> Masa Depan Digital </span> 
@@ -174,7 +174,7 @@ export default function Home() {
   </div>
 </section>
       {/* ABOUT, EXPERTISE & TOOLS */}
-      <section id="about" className="py-32 bg-slate-50 px-6 border-y border-slate-100">
+     < section id="about" className="py-32 bg-surface-container px-6 border-y border-slate-100">
   <div className="container mx-auto">
     <div className="grid md:grid-cols-12 gap-16 items-start">
       
@@ -219,7 +219,7 @@ export default function Home() {
 </section>
 
       {/* EXPERIENCE SECTION */}
-     <section className="py-24 px-6 bg-white">
+     <section className="py-24 px-6 ">
   <div className="container mx-auto">
     <h2 className="text-4xl font-extrabold mb-16 tracking-tight text-slate-900 font-sans">Career Journey</h2>
     <div className="flex flex-col">
@@ -256,12 +256,12 @@ export default function Home() {
 </section>
 
       {/* PROJECTS/PRODUCTS SECTION */}
-      <section id="projects" className="py-24 bg-slate-50 px-6 border-t border-slate-100">
+      <section id="projects" className="py-24 bg-surface-container-low px-6 border-t border-outline/10 transition-colors duration-300">
   <div className="container mx-auto">
     <h2 className="text-4xl font-extrabold mb-16 tracking-tight text-slate-900">Karya Terbaru</h2>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       {portfolio.projects.map((proj: Project) => (
-        <div key={proj.id} className="group bg-white rounded-[40px] overflow-hidden shadow-sm border border-slate-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+        <div key={proj.id} className="group bg-surface-container-lowest rounded-[40px] overflow-hidden shadow-sm border border-slate-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
           {/* ✅ Menampilkan Gambar Project dari Laravel */}
           <div className="relative h-64 overflow-hidden">
             <img 
